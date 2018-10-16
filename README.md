@@ -1,4 +1,5 @@
 # Chart.js Subtitle Plugin
+Currently in early BETA. Only supports line graph with a single line of title text.
 
 ## Install
 ```bash
