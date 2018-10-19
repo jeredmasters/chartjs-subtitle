@@ -1,4 +1,5 @@
 # Chart.js Subtitle Plugin
+[NPM Package][npm-url]
 
 ## Install
 ```bash
