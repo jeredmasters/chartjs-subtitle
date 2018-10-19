@@ -1,5 +1,6 @@
 # Chart.js Subtitle Plugin
 [NPM Package][npm-url]
+Simple subtitle plugin for [Chart.Js][chartjs]
 
 ## Install
 ```bash
@@ -84,3 +85,4 @@ Built by [Jered Masters][jered-cc], [linkedin][linkedin]
 [jered-cc]: http://jered.cc
 [linkedin]: https://www.linkedin.com/in/jeredmasters/
 [npm-url]: https://www.npmjs.com/package/chartjs-subtitle
+[chartjs]: https://www.chartjs.org/
