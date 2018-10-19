@@ -170,7 +170,6 @@ const SubtitlePlugin = {
    * @param options plugin options
    */
   beforeDraw(chart, easingValue, rawOptions) {
-    console.log(chart);
     const options = Object.assign({}, defaultOptions, rawOptions);
     if (options.display) {
       const { ctx } = chart.chart;
