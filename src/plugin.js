@@ -12,6 +12,7 @@ const defaultOptions = {
 
   /**
    * Font size in px
+   * Expects either a string with `pt` or `px`, or an number of px
    * @member {Number}
    * @default 12
    */
@@ -63,8 +64,19 @@ const SubtitlePlugin = {
     }
   },
 
+  resolveSize(options) {
+    const { fontSize } = options;
+    if (typeof fontSize === 'string' || fontSize instanceof String) {
+      return fontSize;
+    }
+    if (typeof fontSize === 'number') {
+      return `${fontSize}px`;
+    }
+    return '12px';
+  },
+
   resolveFont(options) {
-    return `${this.resolveStyle(options)} ${options.fontSize} ${options.fontFamily}`;
+    return `${this.resolveStyle(options)} ${this.resolveSize(options)} ${options.fontFamily}`;
   },
 
   /**
