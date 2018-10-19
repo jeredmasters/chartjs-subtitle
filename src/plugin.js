@@ -1,4 +1,4 @@
-'use strict';
+
 
 import Chart from 'chart.js';
 
@@ -8,32 +8,33 @@ const defaultOptions = {
    * @member {boolean} display
    * @default false
    */
-  display:	false,
+  display: false,
 
   /**
    * Font size in px
    * @member {Number}
    * @default 12
    */
-  fontSize:	12,
+  fontSize: 12,
 
   /**
    * Font family for the title text.
    * @member {String} fontFamily
-   * @default "'Helvetica Neue', 'Helvetica', 'Arial', sans-serif"	
+   * @default "'Helvetica Neue', 'Helvetica', 'Arial', sans-serif"
    */
-  fontFamily:	"'Helvetica Neue', 'Helvetica', 'Arial', sans-serif",
+  fontFamily: "'Helvetica Neue', 'Helvetica', 'Arial', sans-serif",
 
   /**
    * Font color
    * @member {String} fontColor
-   * @default '#999'
+   * @default '#888'
    */
-  fontColor: '#999',
+  fontColor: '#888',
 
   /**
    * Font style
-   * @member {String} 'fontStyle'
+   * @member {String} fontStyle
+   * @enum 'normal' | 'bold' | 'italic' | 'italic bold'
    * @default 'normal'
    */
   fontStyle: 'normal',
@@ -43,33 +44,50 @@ const defaultOptions = {
    * @member {String}
    * @default ''
    */
-  text:	''
+  text: '',
 };
 
 const SubtitlePlugin = {
   id: 'chartJsPluginSubtitle',
 
-    /**
+  resolveStyle(options) {
+    if (!(typeof options.fontStyle === 'string' || options.fontStyle instanceof String)) {
+      return '';
+    }
+    switch (options.fontStyle.toLowerCase()) {
+      case 'normal':
+        return '';
+      default:
+        // allow any string
+        return options.fontStyle;
+    }
+  },
+
+  resolveFont(options) {
+    return `${this.resolveStyle(options)} ${options.fontSize} ${options.fontFamily}`;
+  },
+
+  /**
    * plugin hook to draw the sub title
    * @param chart chartjs instance
    * @param easingValue animation function
    * @param options plugin options
    */
-  beforeDraw(chart, easingValue, options) {
-    options = Object.assign({}, defaultOptions, options);
-    if (options.display){
-      const width = chart.chart.width;
-      const ctx = chart.chart.ctx;
+  beforeDraw(chart, easingValue, rawOptions) {
+    const options = Object.assign({}, defaultOptions, rawOptions);
+    if (options.display) {
+      const { text } = options;
+      const { width, ctx } = chart.chart;
       ctx.restore();
-      ctx.font = `${options.fontSize}px ${options.fontFamily}`;
+      ctx.font = this.resolveFont(options);
       ctx.textBaseline = 'middle';
-      const text = options.text;
       const textX = Math.round((width - ctx.measureText(text).width) / 2);
       const textY = 31;
+      ctx.fillStyle = options.fontColor;
       ctx.fillText(text, textX, textY);
       ctx.save();
     }
-  }
+  },
 };
 
 Chart.pluginService.register(SubtitlePlugin);

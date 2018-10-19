@@ -1,4 +1,4 @@
-'use strict';
+
 
 window.chartColors = {
   red: 'rgb(255, 99, 132)',
@@ -7,11 +7,11 @@ window.chartColors = {
   green: 'rgb(75, 192, 192)',
   blue: 'rgb(54, 162, 235)',
   purple: 'rgb(153, 102, 255)',
-  grey: 'rgb(201, 203, 207)'
+  grey: 'rgb(201, 203, 207)',
 };
 
-(function(global) {
-  var Months = [
+(function (global) {
+  const Months = [
     'January',
     'February',
     'March',
@@ -23,10 +23,10 @@ window.chartColors = {
     'September',
     'October',
     'November',
-    'December'
+    'December',
   ];
 
-  var COLORS = [
+  const COLORS = [
     '#4dc9f6',
     '#f67019',
     '#f53794',
@@ -35,37 +35,38 @@ window.chartColors = {
     '#166a8f',
     '#00a950',
     '#58595b',
-    '#8549ba'
+    '#8549ba',
   ];
 
-  var Samples = global.Samples || (global.Samples = {});
-  var Color = global.Color;
+  const Samples = global.Samples || (global.Samples = {});
+  const Color = global.Color;
 
   Samples.utils = {
     // Adapted from http://indiegamr.com/generate-repeatable-random-numbers-in-js/
-    srand: function(seed) {
+    srand(seed) {
       this._seed = seed;
     },
 
-    rand: function(min, max) {
-      var seed = this._seed;
+    rand(min, max) {
+      const seed = this._seed;
       min = min === undefined ? 0 : min;
       max = max === undefined ? 1 : max;
       this._seed = (seed * 9301 + 49297) % 233280;
       return min + (this._seed / 233280) * (max - min);
     },
 
-    numbers: function(config) {
-      var cfg = config || {};
-      var min = cfg.min || 0;
-      var max = cfg.max || 1;
-      var from = cfg.from || [];
-      var count = cfg.count || 8;
-      var decimals = cfg.decimals || 8;
-      var continuity = cfg.continuity || 1;
-      var dfactor = Math.pow(10, decimals) || 0;
-      var data = [];
-      var i, value;
+    numbers(config) {
+      const cfg = config || {};
+      const min = cfg.min || 0;
+      const max = cfg.max || 1;
+      const from = cfg.from || [];
+      const count = cfg.count || 8;
+      const decimals = cfg.decimals || 8;
+      const continuity = cfg.continuity || 1;
+      const dfactor = Math.pow(10, decimals) || 0;
+      const data = [];
+      let i; let
+        value;
 
       for (i = 0; i < count; ++i) {
         value = (from[i] || 0) + this.rand(min, max);
@@ -79,17 +80,17 @@ window.chartColors = {
       return data;
     },
 
-    labels: function(config) {
-      var cfg = config || {};
-      var min = cfg.min || 0;
-      var max = cfg.max || 100;
-      var count = cfg.count || 8;
-      var step = (max - min) / count;
-      var decimals = cfg.decimals || 8;
-      var dfactor = Math.pow(10, decimals) || 0;
-      var prefix = cfg.prefix || '';
-      var values = [];
-      var i;
+    labels(config) {
+      const cfg = config || {};
+      const min = cfg.min || 0;
+      const max = cfg.max || 100;
+      const count = cfg.count || 8;
+      const step = (max - min) / count;
+      const decimals = cfg.decimals || 8;
+      const dfactor = Math.pow(10, decimals) || 0;
+      const prefix = cfg.prefix || '';
+      const values = [];
+      let i;
 
       for (i = min; i < max; i += step) {
         values.push(prefix + Math.round(dfactor * i) / dfactor);
@@ -98,12 +99,13 @@ window.chartColors = {
       return values;
     },
 
-    months: function(config) {
-      var cfg = config || {};
-      var count = cfg.count || 12;
-      var section = cfg.section;
-      var values = [];
-      var i, value;
+    months(config) {
+      const cfg = config || {};
+      const count = cfg.count || 12;
+      const section = cfg.section;
+      const values = [];
+      let i; let
+        value;
 
       for (i = 0; i < count; ++i) {
         value = Months[Math.ceil(i) % 12];
@@ -113,23 +115,22 @@ window.chartColors = {
       return values;
     },
 
-    color: function(index) {
+    color(index) {
       return COLORS[index % COLORS.length];
     },
 
-    transparentize: function(color, opacity) {
-      var alpha = opacity === undefined ? 0.5 : 1 - opacity;
+    transparentize(color, opacity) {
+      const alpha = opacity === undefined ? 0.5 : 1 - opacity;
       return Color(color).alpha(alpha).rgbString();
-    }
+    },
   };
 
   // DEPRECATED
-  window.randomScalingFactor = function() {
+  window.randomScalingFactor = function () {
     return Math.round(Samples.utils.rand(-100, 100));
   };
 
   // INITIALIZATION
 
   Samples.utils.srand(Date.now());
-
 }(this));

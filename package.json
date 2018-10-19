@@ -1,6 +1,6 @@
 {
   "name": "chartjs-subtitle",
-  "version": "0.1.0",
+  "version": "0.1.3",
   "description": "Chart.js Subtitle Plugin",
   "main": "build/Plugin.Subtitle.js",
   "repository": {
@@ -31,8 +31,12 @@
     "babel-core": "^6.26.0",
     "babel-plugin-external-helpers": "^6.22.0",
     "babel-preset-env": "^1.6.1",
-    "eslint": "^3.19.0",
+    "eslint": "^5.7.0",
+    "eslint-config-airbnb-base": "^13.1.0",
+    "eslint-plugin-import": "^2.14.0",
+    "eslint-plugin-prettier": "^3.0.0",
     "package-preamble": "0.0",
+    "prettier": "^1.14.3",
     "rimraf": "^2.6.2",
     "rollup": "^0.55.3",
     "rollup-plugin-babel": "^3.0.3",
