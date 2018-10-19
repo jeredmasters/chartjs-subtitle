@@ -20,32 +20,33 @@ The options for the subtitle are based on the options for the existing title
          * @member {boolean} display
          * @default false
          */
-        display:	false,
+        display: false,
 
         /**
          * Font size in px
          * @member {Number}
          * @default 12
          */
-        fontSize:	12,
+        fontSize: 12,
 
         /**
          * Font family for the title text.
          * @member {String} fontFamily
-         * @default "'Helvetica Neue', 'Helvetica', 'Arial', sans-serif"	
+         * @default "'Helvetica Neue', 'Helvetica', 'Arial', sans-serif"
          */
-        fontFamily:	"'Helvetica Neue', 'Helvetica', 'Arial', sans-serif",
+        fontFamily: "'Helvetica Neue', 'Helvetica', 'Arial', sans-serif",
 
         /**
          * Font color
          * @member {String} fontColor
-         * @default '#999'
+         * @default '#888'
          */
-        fontColor: '#999',
+        fontColor: '#888',
 
         /**
          * Font style
-         * @member {String} 'fontStyle'
+         * @member {String} fontStyle
+         * @enum 'normal' | 'bold' | 'italic' | 'italic bold'
          * @default 'normal'
          */
         fontStyle: 'normal',
@@ -55,7 +56,7 @@ The options for the subtitle are based on the options for the existing title
          * @member {String}
          * @default ''
          */
-        text:	''
+        text: '',
       }
     }
 

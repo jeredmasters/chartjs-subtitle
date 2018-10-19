@@ -63,7 +63,7 @@ window.chartColors = {
       const count = cfg.count || 8;
       const decimals = cfg.decimals || 8;
       const continuity = cfg.continuity || 1;
-      const dfactor = Math.pow(10, decimals) || 0;
+      const dfactor = 10 ** decimals || 0;
       const data = [];
       let i; let
         value;
@@ -87,7 +87,7 @@ window.chartColors = {
       const count = cfg.count || 8;
       const step = (max - min) / count;
       const decimals = cfg.decimals || 8;
-      const dfactor = Math.pow(10, decimals) || 0;
+      const dfactor = 10 ** decimals || 0;
       const prefix = cfg.prefix || '';
       const values = [];
       let i;
