@@ -1,6 +1,6 @@
 {
   "name": "chartjs-subtitle",
-  "version": "0.1.4",
+  "version": "0.1.5",
   "description": "Chart.js Subtitle Plugin",
   "main": "build/Plugin.Subtitle.js",
   "repository": {
