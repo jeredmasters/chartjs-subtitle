@@ -64,9 +64,9 @@ The options for the subtitle are based on the options for the existing title
 ```
 
 ## Examples
-![image](https://user-images.githubusercontent.com/10936951/47202480-cef99200-d3af-11e8-968f-b81677b0b7fd.png)
-![image](https://user-images.githubusercontent.com/10936951/47202502-e2a4f880-d3af-11e8-8117-e9ec3d869477.png)
-![image](https://user-images.githubusercontent.com/10936951/47202528-036d4e00-d3b0-11e8-98fa-81d378eb7536.png)
+![image](https://user-images.githubusercontent.com/10936951/47205090-8e9e1200-d3b7-11e8-91cc-b81a572c8283.png)
+![image](https://user-images.githubusercontent.com/10936951/47205101-9a89d400-d3b7-11e8-8098-bdb8acf3a5b4.png)
+![image](https://user-images.githubusercontent.com/10936951/47205132-a9708680-d3b7-11e8-975f-58f35e88d67b.png)
 
 
 ## Building
