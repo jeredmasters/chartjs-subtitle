@@ -1,5 +1,4 @@
 # Chart.js Subtitle Plugin
-[![jered.cc]][jered-cc] [![NPM Package]][npm-url]
 
 ## Install
 ```bash
@@ -61,6 +60,11 @@ The options for the subtitle are based on the options for the existing title
   ...
 }
 ```
+
+## Examples
+![image](https://user-images.githubusercontent.com/10936951/47202480-cef99200-d3af-11e8-968f-b81677b0b7fd.png)
+![image](https://user-images.githubusercontent.com/10936951/47202502-e2a4f880-d3af-11e8-8117-e9ec3d869477.png)
+![image](https://user-images.githubusercontent.com/10936951/47202528-036d4e00-d3b0-11e8-98fa-81d378eb7536.png)
 
 
 ## Building
