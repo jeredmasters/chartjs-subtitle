@@ -11,8 +11,8 @@ const defaultOptions = {
   display: false,
 
   /**
-   * Font size in px
-   * Expects either a string with `pt` or `px`, or an number of px
+   * Font size
+   * Expects either a string with `pt` or `px`, or a number of px
    * @member {Number}
    * @default 12
    */
