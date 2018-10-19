@@ -1,5 +1,5 @@
 # Chart.js Subtitle Plugin
-Currently in early BETA. Only supports line graph with a single line of title text.
+[![jered.cc]][jered-cc] [![NPM Package]][npm-url]
 
 ## Install
 ```bash
@@ -71,3 +71,11 @@ npm run build
 ```
 
 
+*** 
+
+Built by [Jered Masters][jered-cc], [linkedin][linkedin]
+
+
+[jered-cc]: http://jered.cc
+[linkedin]: https://www.linkedin.com/in/jeredmasters/
+[npm-url]: https://www.npmjs.com/package/chartjs-subtitle

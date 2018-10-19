@@ -1,0 +1,86 @@
+<!doctype html>
+<html>
+
+<head>
+  <title>Chart.js Subtitle Plugin</title>
+  <script src="../node_modules/chart.js/dist/Chart.bundle.js" type></script>
+  <script src="../build/Plugin.Subtitle.js"></script>
+  <style>
+    canvas {
+      -moz-user-select: none;
+      -webkit-user-select: none;
+      -ms-user-select: none;
+    }
+  </style>
+</head>
+
+<body>
+<div id="container" style="width: 50%;">
+  <canvas id="canvas"></canvas>
+</div>
+
+<script>
+  var color = Chart.helpers.color;
+  var barChartData = {
+    labels: ["January", "February", "March", "April"],
+    datasets: [{
+      label: 'Dataset 1',
+      //backgroundColor: '#d95f02',
+      borderColor: '#d95f02',
+      borderWidth: 1,
+      data: [
+        60,
+        33,
+        78,
+        54
+      ]
+    }, {
+      label: 'Dataset 2',
+      //backgroundColor: '#1b9e77',
+      borderColor: '#1b9e77',
+      borderWidth: 1,
+      data: [
+        100,
+        77,
+        33,
+        45
+      ]
+    }]
+
+  };
+
+  window.onload = function () {
+    var ctx = document.getElementById("canvas").getContext("2d");
+    window.myBar = new Chart(ctx, {
+      type: 'bar',
+      data: barChartData,
+      options: {
+        responsive: true,
+        scales: {
+          yAxes: [{
+            ticks: {
+              beginAtZero: true
+            }
+          }]
+        },
+        legend: {
+          position: 'top',
+        },
+        title: {
+          display: true,
+          text: 'Chart.js Subtitle Plugin'
+        },
+        plugins: {
+          chartJsPluginSubtitle: {
+            display: true,
+            text:	'Custom Subtitle'
+          }
+        }
+      },
+    });
+
+  };
+
+</script>
+</body>
+</html>
