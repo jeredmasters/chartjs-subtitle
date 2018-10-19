@@ -23,7 +23,8 @@ The options for the subtitle are based on the options for the existing title
         display: false,
 
         /**
-         * Font size in px
+         * Font size
+         * Expects either a string with `pt` or `px`, or an number of px
          * @member {Number}
          * @default 12
          */
